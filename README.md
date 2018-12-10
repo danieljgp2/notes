@@ -11,7 +11,7 @@ Things you may want to cover:
     + bundle install
 
 * Configuration
-    + Crear archivo environment_variables.yml y agregar la siguiente configuracion:
+    + Crear archivo environment_variables.yml dentro de la carpeta config y agregar la siguiente configuracion:
         + development:
             + DATABASE_USER: usuario_de_postgres
             + DATABASE_PASS: password_de_usuario
