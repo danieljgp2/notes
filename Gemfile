@@ -47,9 +47,12 @@ gem 'haml'
 # Use font awesome to handle applications icons
 gem "font-awesome-rails"
 # Use simple form to handle forms on the application
-gem 'simple-form'
+gem 'simple_form'
 # Use client side validations to handle validations on simple form
 gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
+# Use toast to show system messages
+gem 'toastr-rails'
 
 
 # Use Capistrano for deployment

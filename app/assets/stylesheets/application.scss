@@ -13,11 +13,22 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import "bootstrap";
 @import "font-awesome";
+@import "toastr";
 
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 .font-white, .font-white:hover{
     color: white;
+}
+.error{
+    color: red;
+}
+.color-black, .color-black:hover{
+    color: black;
 }
 .login-page{
     background: #d2d6de;
