@@ -1,0 +1,18 @@
+.login-box
+  .login-logo
+    %span
+      Amazing notes
+  .login-box-body
+    %p.login-sign-in-message Log In
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email'
+        %br
+      .field
+        = f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Password'
+        %br
+      .actions.text-center
+        = f.submit "Log in", class: 'btn btn-info'
+      %br
+    .text-center
+      = render "devise/shared/links"

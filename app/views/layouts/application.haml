@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Amazing Notes
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    - if notice
+      = hidden_field_tag :notice, notice, :id => 'notice'
+      = hidden_field_tag :alert, alert, :id => 'alert'
+      %script{:charset => "utf-8", :type => "text/javascript"}
+        popup();
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.font-white
+      %span.navbar-brand Amazing Notes
+      #navbarSupportedContent.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item.active
+            = link_to 'My Notes', notes_path, class: 'nav-link'
+          = link_to 'Log Out', destroy_user_session_path, class: 'btn btn-default font-white', method: :delete
+    .notes
+      = yield

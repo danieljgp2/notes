@@ -1,0 +1,37 @@
+.p-4
+    = simple_form_for :search, url: search_note_path, html: {class: 'form-inline d-inline'} do |f|
+        = f.text_field :filter, placeholder: 'By title or content', class: 'form-control mr-2'
+        = f.submit 'Search', class: 'btn btn-default'
+    %i.fa.fa-plus.ml-2#new-note
+.row.p-4
+    .col-sm-2#note-form
+        = simple_form_for @note, validate: true do |f|
+            .card.bg-light.mb-3{:style => "max-width: 18rem;"}
+                .card-header
+                    = f.input :title, placeholder: 'Title', label: false, input_html: { class: 'new-note-input bg-transparent' }
+                .card-body
+                    %p.card-text 
+                        = f.input :content, placeholder: 'Content', label: false, input_html: { class: 'new-note-input bg-transparent' }
+                        %br
+                        = f.submit 'Save', class: 'btn text-right'
+    - @notes.each do |n|
+        .col-sm-2.hide-note-form.d-none{id: "note-#{n.id}-form"}
+            = simple_form_for n, validate: true do |f|
+                .card.bg-light.mb-3{:style => "max-width: 18rem;"}
+                    .card-header
+                        = f.input :title, placeholder: 'Title', label: false, input_html: { class: 'new-note-input bg-transparent' }
+                    .card-body
+                        %p.card-text 
+                            = f.input :content, placeholder: 'Content', label: false, input_html: { class: 'new-note-input bg-transparent' }
+                            %br
+                            = f.submit 'Save', class: 'btn text-right'
+        .col-sm-2.show-note-form{id: "note-#{n.id}-information"}
+            .card.bg-light.mb-3{:style => "max-width: 18rem;"}
+                .card-header
+                    = n.title
+                    %i.fa.fa-edit{onClick: "showForm(#{n.id})"}
+                    = link_to note_path(n), method: :delete, class: 'color-black' do
+                        %i.fa.fa-trash
+                .card-body
+                    %p.card-text
+                        = n.content

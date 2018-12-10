@@ -13,5 +13,44 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import "bootstrap";
+@import "font-awesome";
+@import "toastr";
 
- @import "bootstrap";
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.font-white, .font-white:hover{
+    color: white;
+}
+.error{
+    color: red;
+}
+.color-black, .color-black:hover{
+    color: black;
+}
+.login-page{
+    background: #d2d6de;
+    .login-box{
+        width: 360px;
+        margin: 7% auto;
+        .login-logo{
+            font-size: 35px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        .login-box-body{
+            background: #fff;
+            padding: 20px;
+            border-top: 0;
+            color: #666;
+            .login-sign-in-message{
+                margin: 0;
+                text-align: center;
+                padding: 0 20px 20px 20px;
+            }
+        }
+    }
+}

@@ -30,10 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
-# Admin LTE as application admin template
-gem 'adminlte-rails'
 # Bootstrap
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.1.3'
 # JQuery rails as dependecie of bootstrap, see https://github.com/twbs/bootstrap-rubygem for more details
 gem 'jquery-rails'
 # Use devise to handle user account creation and user authentication
@@ -42,6 +40,20 @@ gem 'devise'
 gem 'annotate'
 # Use robocop to handle rails good practices
 gem 'rubocop'
+# Use postgress as Database
+gem 'pg'
+# Use HAML to write HTML documents
+gem 'haml'
+# Use font awesome to handle applications icons
+gem "font-awesome-rails"
+# Use simple form to handle forms on the application
+gem 'simple_form'
+# Use client side validations to handle validations on simple form
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
+# Use toast to show system messages
+gem 'toastr-rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

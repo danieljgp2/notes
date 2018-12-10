@@ -16,4 +16,17 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require rails.validations
+//= require toastr
 //= require_tree .
+
+var popup = function () {
+    var alert = $('#alert').val();
+    var message = $('#notice').val();
+    if (alert == 'warning') {
+        toastr.warning(message);
+    } else {
+        toastr.success(message);
+    }
+
+}

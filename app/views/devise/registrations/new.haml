@@ -1,0 +1,21 @@
+.login-box
+  .login-logo
+    %span
+      Amazing notes
+  .login-box-body
+    %p.login-sign-in-message Sign up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control'
+        %br
+      .field
+        = f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: 'form-control'
+        %br
+      .field
+        = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm Password', class: 'form-control'
+        %br
+      .actions.text-center
+        = f.submit "Sign up", class: 'btn btn-info'
+      %br
+    .text-center
+      = render "devise/shared/links"
